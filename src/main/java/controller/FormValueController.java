@@ -1,6 +1,7 @@
 package controller;
 
 import Entity.FormValue;
+import Entity.Location;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,10 @@ public class FormValueController {
         return formValueService.getAllFormValues();
     }
 
+    @GetMapping("/location")
+    public List<Location> getAllLocation() {
+        return formValueService.getAllLocations();
+    }
     @GetMapping("/{id}")
     public FormValue getFormValueById(@PathVariable Long id) {
         return formValueService.getFormValueById(id);
